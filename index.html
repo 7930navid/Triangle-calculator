@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=" initial-scale=0.1, maximum-scale=10.0, user-scalable=no">
+    <title>Triangle Calculator</title>
+    <style>
+        input[type="text"]{
+            background: rgb(0,255,255);
+            color: red;
+            height: 50px;
+            width: 400px;
+            font-size: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 50px;
+        }
+        
+        th {
+            width: 33.33%;
+            padding: 10px;
+        }
+        
+        button {
+            background: linear-gradient(to top, red,pink );
+            width: 100%;
+            height: 150px;
+            color: blue;
+            font-size: 30px;
+            border: none;
+            border-radius: 15px;
+           cursor: pointer;
+            transition: all 0.3s ease;
+        }
+       .button {
+            background: linear-gradient(to top, orange,violet);
+            width: 100%;
+            height: 150px;
+            color: cyan;
+            font-size: 30px;
+            border: none;
+            border-radius: 15px;
+           cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #content-display {
+            margin: 0px;
+            padding: 100px;
+            border: 0px;
+            border-radius: 0px;
+            border-color:none;
+        }
+        
+        .triangle-btn1 {
+           background: linear-gradient(to right, yellow,green);            
+            color: white;
+            font-size: 30px;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 90px;
+            cursor: pointer;
+        }
+   .triangle-btn2{
+           background: linear-gradient(to right, green,yellow );            
+            color: white;
+            font-size: 30px;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 90px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table border="0" cellspacing="0"
+style="
+border-color:black;
+background:black;
+font-size: 35px;
+color: white;
+>
+<tr style="
+    color:white;
+    background:black;
+   ">
+  <td>
+     
+  </td> 
+  <td>
+    <marquee
+    behavor="scroll"
+    direction="left"
+    scrollamount="10"
+    width="300px"
+    >
+        Triangle Calculator
+    </marquee>
+    <p style="font-size:12px; text-align:center;">
+        Made by: Md. Asir Abrar Khan
+    </p>
+    </td>
+    <td style="
+    color:white;
+    background:black;
+    width:700px;
+   "
+    >
+       
+   </td>
+
+   <td>
+   </td>
+
+    <table>
+        <tr>
+            <th>
+                <button onclick="h()" class="button">🏠<br>HOME</button>
+            </th>
+            <th>
+                <button onclick="c()" class="button">🧮<br>CALCULATOR</button>
+            </th>
+            <th>
+                <button onclick="a()" class="button">❗<br>ABOUT</button>
+            </th>
+        </tr>
+    </table>
+    
+    <div id="content-display">
+        <body style="background:lightgreen;">
+    <br><br><br>
+    <table border="0" cellpadding="10" align="center" height="150px" width="730px"
+    style="background: pink;color: blue;font-size: 50px;border-radius:30px;text-align:center;">
+<tr>
+ <td align="right">
+     <marquee direction="right" behavior="slide" scrollamount="53px">W E L C</marquee>
+ </td>
+ <td align="left">
+    <marquee direction="left" behavior="slide" scrollamount="50px">O M E !</marquee> 
+ </td>   
+</tr> 
+<tr>
+    <td colspan="2" style="taxt-align:center;">
+    <marquee align="center" direction="up" behavior="slide" scrollamount="5px" align="center"><span style="color:pink;">..</span>to our application‼️</marquee>
+ </td>   
+</tr>       
+    </table>
+ <table border="0" align="center" height="200px" width="600px">
+ <tr>
+     <td></td>
+     <td>
+         <marquee direction="left" behavior="slide" scrollamount="30px">
+         <button id="button" style="height: 100px;width:545px;background: lightgreen;border: none;font-size: 20px;border-radius: 50px;"></button>      
+         <button onclick="h()" id="button" style="height: 100px;width: 200px;background: pink;color:blue;font-size: 20px;border-radius: 50px;">Get Start..</button>      
+         </marquee>
+     </td>
+ </tr> 
+</body>
+</div>
+
+<script>
+function h() {
+    document.getElementById("content-display").innerHTML = `            
+    <button onclick="rat()" class="triangle-btn1">RIGHT-ANGLED TRIANGLE</button>
+    <button onclick="et()" class="triangle-btn2">EQUILATERAL TRIANGLE</button>
+    <button onclick="tr()" class="triangle-btn1">ISOSCELES TRIANGLE</button>            
+    <button onclick="st()" class="triangle-btn2">SCALENE TRIANGLE</button>`;
+}
+
+function c() {
+    document.getElementById("content-display").innerHTML = `
+   <html>
+    <style>
+        th, td {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
+        th {
+            background-color: lightgreen;
+            color: white;
+        }
+        td {
+            background-color: black;
+            color: white;
+        }
+        input[type="button"] {
+            width: 100%;
+            height: 100%;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="text"] {
+            width: 700px;
+            height: 100px;
+            font-size: 30px;
+            text-align: right;
+            padding-right: 10px;
+            background:pink;
+            color:red;
+        }
+        button{
+            background-color: red;
+        }
+        input[type="button"]{
+            background-color: rgb(0,200,200);
+            color: white;  
+        }
+ </style>
+ <body>
+    <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <th colspan="4" style="background:rgb(0,200,255);">
+                <input type="text" id="display" disabled>
+            </th>
+        </tr>
+        <tr>
+            <th><input type="button" value="AC" onclick="clearDisplay()" style="background: red;"></th>
+            <th><input type="button" value="C" onclick="deleteLast()" style="background: red;"></th>
+            <th><input type="button" value="%" onclick="appendValue('%')" style="background: green;"></th>
+            <th><input type="button" value="=" onclick="calculate()" style="background: green;"></th>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="appendValue('1')"></td>
+            <td><input type="button" value="2" onclick="appendValue('2')"></td>
+            <td><input type="button" value="3" onclick="appendValue('3')"></td>
+            <th><input type="button" value="+" onclick="appendValue('+')" style="background: green;"></th>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="appendValue('4')"></td>
+            <td><input type="button" value="5" onclick="appendValue('5')"></td>
+            <td><input type="button" value="6" onclick="appendValue('6')"></td>
+            <th><input type="button" value="-" onclick="appendValue('-')" style="background: green;"></th>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="appendValue('7')"></td>
+            <td><input type="button" value="8" onclick="appendValue('8')"></td>
+            <td><input type="button" value="9" onclick="appendValue('9')"></td>
+            <th><input type="button" value="*" onclick="appendValue('*')" style="background: green;"></th>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="appendValue('.')"></td>
+            <td><input type="button" value="0" onclick="appendValue('0')"></td>
+            <td><input type="button" value="00" onclick="appendValue('00')"></td>
+
+            <th><input type="button" value="/" onclick="appendValue('/')" style="background: green;"></th>
+        </tr>
+    </table>
+    </body>
+    </html>
+    `;
+}
+
+function appendValue(value) {
+    document.getElementById("display").value += value;
+}
+
+function clearDisplay() {
+    document.getElementById("display").value = "";
+}
+
+function deleteLast() {
+    let display = document.getElementById("display");
+    display.value = display.value.slice(0, -1);
+}
+
+function calculate() {
+    let display = document.getElementById("display");
+    try {
+        display.value = eval(display.value.replace('%', '/100'));
+    } catch (error) {
+        display.value = "Error";
+    }
+}
+
+function a() {
+    document.getElementById("content-display").innerHTML = `
+    <p style="font-size: 50px;color: white;background: linear-gradient(to left, yellow, green, yellow);text-align: center;font-family: 'Futura Bold';margin: 0;padding: 10px;">ABOUT THE APP</p>  
+    <table border="0" cellspacing="0" align="center" style="border-radius: 50px;overflow: hidden;border-collapse: separate;">
+        <tr>
+            <td rowspan="2" style="width: 100px;height: 1500px;background:linear-gradient(to left, green,cyan);">
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:red;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:green;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:yellow;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:red;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:rgb(0,100,100);height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:orange;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:white;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:rgb(0,255,255);height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:skyblue;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:violet;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:blue;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:pink;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="alternate" scrollamount="10"  style="font-size:30px;height:80px;text-align:center;">🫡</marquee>   
+            </td>
+            <td style="width: 750px;height: 1500px;background:green;color:white;font-size:30px;">
+                <b>Version :</b> 1.0<hr>  
+                <b>Developer:</b><hr>
+                <p><i>HTML, CSS, JS :</i><br>MD. Asir Abrar Khan<br><br></p>  
+                <strong>Description:</strong><hr>  
+                <p>A lightweight, precision tool for solving triangles using trigonometric principles. Calculates unknown sides, angles, and area based on given inputs.
+                <br><br><b><i> Why Use This Tool? </i></b><hr>  
+                <b>Educational</b>:<br> Ideal for students learning trigonometry.<br>  
+                <b>Professional</b>:<br> Saves time for engineers, architects, and designers.<br>  
+                <b>Reliable</b>:<br> Based on the <b>Law of Sines/Cosines</b> and rigorous validation.</p>
+            </td>
+            <td rowspan="2" style="width: 100px;height: 1500px;background: linear-gradient(to right, green,cyan);">
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:red;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:green;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:yellow;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:red;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:rgb(0,100,100);height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:orange;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:white;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:rgb(0,255,255);height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:skyblue;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:violet;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:blue;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="scroll" scrollamount="10" style="font-size:100px;color:pink;height:100px;text-align:center;">.</marquee>
+                <marquee direction="up" behavior="alternate" scrollamount="10" style="font-size:30px;height:80px;text-align:center;">🫡</marquee>   
+            </td>
+        </tr>
+        
+        <tr>
+    <td
+style="
+width: 750px;
+height: 100px;
+background:green;"
+>
+<div style="text-align:center">
+<button onclick="d()" style="
+background:green;
+color:yellow;
+height: 130px;
+width: 500px;
+border: 0px;
+border-radius: 20px;
+font-size: 30px
+">
+<table border="0" cellspacing="0" style="background:linear-gradient(to right, pink,red,pink); border-radius: 20px;">
+<tr>
+<td>
+   <marquee behavior="alternate" width="100px" direction="right">
+       😍
+   </marquee>
+</td>    
+<td style="text-align:center;">
+  
+    SUPPORT US
+</td>
+<td>
+    <marquee behavior="alternate" width="100px" direction="left">
+       😍
+   </marquee>
+</td>
+</tr>
+</table>
+</button>
+</div>    
+</td>
+</tr>       
+ </table>`;
+}
+
+function d(){
+    confirm('Are you agree? If you agree, contract us with this number: 01748623022');
+}   
+
+function rat() {
+    document.getElementById('content-display').innerHTML = `
+    <body>
+        <button onclick="h()" style="background:#08325b;width: 200px;height: 150px;color: blue;font-size: 50px">🔙</button>
+        <br><br>
+        <mg src="rt.jpg" height="700px" width="800px">
+        <table border="0" cellspacing="0">
+            <tr> 
+                <td align="left" valign="center" style="font-size:50px;color:yellow;background:green;">
+                    CHOOSE FROM THE GIVEN OPTIONS, WHAT YOU KNOW ABOUT.. <p style="font-size:70px;">➡</p>    
+                </td>               
+                <td>  
+                    <button onclick="aar()" style="height: 200px;width: 500px;">side a & angle a</button>                 
+                    <button onclick="bar()" style="height: 200px;width: 500px;">side b & angle a</button>
+                    <button onclick="car()" style="height: 200px;width: 500px;">side c & angle a</button>
+                    <button onclick="abr()" style="height: 200px;width: 500px;">side a & angle b</button>                 
+                    <button onclick="bbr()" style="height: 200px;width: 500px;">side b & angle b</button>                 
+                    <button onclick="cbr()" style="height: 200px;width: 500px;">side c & angle b</button> 
+                </td> 
+            </tr>
+        </table>                
+    </body>`;
+}
+
+function aar(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="rat()" style="background: #08325b;width: 200px;height: 150px;color: blue;font-size: 50px">🔙</button>
+    <br><br><br>
+    <table border="0" cellspacing="0" height="300px" width="800px" style="font-size:30px;">
+        <tr>
+            <td>Side a =</td>
+            <td><input type="text" id="i1"></td>    
+        </tr>
+        <tr>
+            <td>Angle a =</td>
+            <td><input type="text" id="i2"></td>    
+        </tr>
+        <tr>
+            <td><button onclick="c1()" style="height:60px;width:200px;background:black;color:white;font-size:30px">Calculate</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Side b =</td>    
+            <td><input type="text" id="i3" disabled></td>   
+        </tr>
+        <tr>
+            <td>Side c =</td>    
+            <td><input type="text" id="i4" disabled></td>   
+        </tr>      
+        <tr>
+            <td>Angle b =</td>    
+            <td><input type="text" id="i5" disabled></td>   
+        </tr>      
+    </table>`;
+}
+
+function bar(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="rat()" style="background: blue;width: 200px;height: 150px;color: #08325b;font-size: 50px">🔙</button>
+    <br><br><br>
+    <table border="0" cellspacing="0" height="300px" width="800px" style="font-size:30px;">
+        <tr>
+            <td>Side b =</td>
+            <td><input type="text" id="i6"></td>    
+        </tr>
+        <tr>
+            <td>Angle a =</td>
+            <td><input type="text" id="i7"></td>    
+        </tr>
+        <tr>
+            <td><button onclick="c2()" style="height:60px;width:200px;background:black;color:white;font-size:30px">Calculate</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Side a =</td>    
+            <td><input type="text" id="i8" disabled></td>   
+        </tr>
+        <tr>
+            <td>Side c =</td>    
+            <td><input type="text" id="i9" disabled></td>   
+        </tr>      
+        <tr>
+            <td>Angle b =</td>    
+            <td><input type="text" id="i10" disabled></td>   
+        </tr>      
+    </table>`;
+}
+
+function car(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="rat()" style="background: blue;width: 200px;height: 150px;color: #08325b;font-size: 50px">🔙</button>
+    <br><br><br>
+    <table border="0" cellspacing="0" height="300px" width="800px" style="font-size:30px;">
+        <tr>
+            <td>Side c =</td>
+            <td><input type="text" id="i11"></td>    
+        </tr>
+        <tr>
+            <td>Angle a =</td>
+            <td><input type="text" id="i12"></td>    
+        </tr>
+        <tr>
+            <td><button onclick="c3()" style="height:60px;width:200px;background:black;color:white;font-size:30px">Calculate</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Side a =</td>    
+            <td><input type="text" id="i13" disabled></td>   
+        </tr>
+        <tr>
+            <td>Side b =</td>    
+            <td><input type="text" id="i14" disabled></td>   
+        </tr>      
+        <tr>
+            <td>Angle b =</td>    
+            <td><input type="text" id="i15" disabled></td>   
+        </tr>      
+    </table>`;
+}
+
+function abr(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="rat()" style="background: #08325b;width: 200px;height: 150px;color: blue;font-size: 50px">🔙</button>
+    <br><br><br>
+    <table border="0" cellspacing="0" height="300px" width="800px" style="font-size:30px;">
+        <tr>
+            <td>Side a =</td>
+            <td><input type="text" id="i16"></td>    
+        </tr>
+        <tr>
+            <td>Angle b =</td>
+            <td><input type="text" id="i17"></td>    
+        </tr>
+        <tr>
+            <td><button onclick="c4()" style="height:60px;width:200px;background:black;color:white;font-size:30px">Calculate</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Side b =</td>    
+            <td><input type="text" id="i18" disabled></td>   
+        </tr>
+        <tr>
+            <td>Side c =</td>    
+            <td><input type="text" id="i19" disabled></td>   
+        </tr>      
+        <tr>
+            <td>Angle a =</td>    
+            <td><input type="text" id="i20" disabled></td>   
+        </tr>      
+    </table>`;
+}
+
+function bbr(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="rat()" style="background: blue;width: 200px;height: 150px;color: #08325b;font-size: 50px">🔙</button>
+    <br><br><br>
+    <table border="0" cellspacing="0" height="300px" width="800px" style="font-size:30px;">
+        <tr>
+            <td>Side b =</td>
+            <td><input type="text" id="i21"></td>    
+        </tr>
+        <tr>
+            <td>Angle b =</td>
+            <td><input type="text" id="i22"></td>    
+        </tr>
+        <tr>
+            <td><button onclick="c5()" style="height:60px;width:200px;background:black;color:white;font-size:30px">Calculate</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Side a =</td>    
+            <td><input type="text" id="i23" disabled></td>   
+        </tr>
+        <tr>
+            <td>Side c =</td>    
+            <td><input type="text" id="i24" disabled></td>   
+        </tr>      
+        <tr>
+            <td>Angle a =</td>    
+            <td><input type="text" id="i25" disabled></td>   
+        </tr>      
+    </table>`;
+}
+
+function cbr(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="rat()" style="background: blue;width: 200px;height: 150px;color: #08325b;font-size: 50px">🔙</button>
+    <br><br><br>
+    <table border="0" cellspacing="0" height="300px" width="800px" style="font-size:30px;">
+        <tr>
+            <td>Side c =</td>
+            <td><input type="text" id="i26"></td>    
+        </tr>
+        <tr>
+            <td>Angle b =</td>
+            <td><input type="text" id="i27"></td>    
+        </tr>
+        <tr>
+            <td><button onclick="c6()" style="height:60px;width:200px;background:black;color:white;font-size:30px">Calculate</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Side a =</td>    
+            <td><input type="text" id="i28" disabled></td>   
+        </tr>
+        <tr>
+            <td>Side b =</td>    
+            <td><input type="text" id="i29" disabled></td>   
+        </tr>      
+        <tr>
+            <td>Angle a =</td>    
+            <td><input type="text" id="i130" disabled></td>   
+        </tr>      
+    </table>`;
+}
+
+function et(){
+    document.getElementById('content-display').innerHTML = `
+    <body>
+        <button onclick="h()" style="background:#08325b;width: 200px;height: 150px;color: blue;font-size: 50px">🔙</button>
+        <br><br>
+        <mg src="et.jpg" height="700px" width="800px">
+        <table border="0" cellspacing="0">
+            <tr>
+                <td align="center" valign="center" style="font-size:30px;color:yellow;background:green;">
+                    CHOOSE FROM THE GIVEN OPTIONS BELLOW, WHAT YOU KNOW ABOUT THE TRIANGLE..    
+                </td>
+            </tr>
+            <tr> 
+                <td>  
+                    <button onclick="ae()" style="height: 200px;width: 900px;">side a</button>                 
+                    <button onclick="he()" style="height: 200px;width: 900px;">Height h</button>
+                </td>
+            </tr>
+        </table>                
+    </body>`;
+}
+
+function ae(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="et()" style="background: blue;width: 200px;height: 150px;color: #08325b;font-size: 50px">🔙</button>
+    <br><br><br>
+    <table border="0" cellspacing="0" height="300px" width="800px" style="font-size:30px;">
+        <tr>
+            <td>Side a =</td>
+            <td><input type="text" id="i31"></td>    
+        </tr>
+        <tr>
+            <td><button onclick="c7()" style="height:60px;width:200px;background:black;color:white;font-size:30px">Calculate</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Height h =</td>    
+            <td><input type="text" id="i32" disabled></td>   
+        </tr>
+    </table>`;
+}
+
+function he(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="et()" style="background: blue;width: 200px;height: 150px;color: #08325b;font-size: 50px">🔙</button>
+    <br><br><br>
+    <table border="0" cellspacing="0" height="300px" width="800px" style="font-size:30px;">
+        <tr>
+            <td>Height h =</td>
+            <td><input type="text" id="i33"></td>    
+        </tr>
+        <tr>
+            <td><button onclick="c8()" style="height:60px;width:200px;background:black;color:white;font-size:30px">Calculate</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Side a =</td>    
+            <td><input type="text" id="i34" disabled></td>   
+        </tr>
+    </table>`;
+}
+
+function st() {
+    document.getElementById("content-display").innerHTML = `
+        <button onclick="h()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+        <br><br>
+        <mg src="st.jpg" height="700px" width="800px">       
+        <table border="0" cellspacing="10" style="width:900px;">
+            <tr>
+                <td colspan="2" style="background: green; color: yellow; height: 200px; width: 900px; font-size:30px;" align="center">
+                    CHOOSE WHAT YOU KNOW ABOUT THE TRIANGLE:
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="abc1()" style="height: 200px; width: 400px;">Side a & Side b & Side c</button>
+                    <button onclick="abc2()" style="height: 200px; width: 400px;">Angle a & Angle b & Angle c</button>
+                    <button onclick="abc3()" style="height: 200px; width: 400px;">Side a & Side b & Angle a</button>
+                    <button onclick="abc4()" style="height: 200px; width: 400px;">Side a & Side b & Angle b</button>
+                    <button onclick="abc5()" style="height: 200px; width: 400px;">Side a & Side b & Angle c</button>
+                    <button onclick="abc6()" style="height: 200px; width: 400px;">Side a & Side c & Angle a</button>
+                    <button onclick="abc7()" style="height: 200px; width: 400px;">Side a & Side c & Angle b</button>
+                </td>
+                <td>
+                    <button onclick="abc8()" style="height: 200px; width: 400px;">Side a & Side c & Angle c</button>
+                    <button onclick="abc9()" style="height: 200px; width: 400px;">Side b & Side c & Angle a</button>
+                    <button onclick="abc10()" style="height: 200px; width: 400px;">Side b & Side c & Angle b</button>
+                    <button onclick="abc11()" style="height: 200px; width: 400px;">Side b & Side c & Angle c</button>
+                    <button onclick="abc12()" style="height: 200px; width: 400px;">Angle a & Side a & Side b</button>
+                    <button onclick="abc13()" style="height: 200px; width: 400px;">Angle a & Side a & Side c</button>
+                    <button onclick="abc14()" style="height: 200px; width: 400px;">Angle a & Side b & Side c</button>
+                </td>
+            </tr>
+        </table>`;
+}
+
+function abc1(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side a =</td><td><input type="text" id="s1"></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s2"></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s3"></td></tr>
+        <tr><td><button onclick="c9()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s4" disabled></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s5" disabled></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s6" disabled></td></tr>
+    </table>`;
+}
+
+function abc2(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Angle a =</td><td><input type="text" id="s7"></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s8"></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s9"></td></tr>
+        <tr><td><button onclick="c10()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side a =</td><td><input type="text" id="s10" disabled></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s11" disabled></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s12" disabled></td></tr>
+    </table>`;
+}
+
+function abc3(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side a =</td><td><input type="text" id="s13"></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s14"></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s15"></td></tr>
+        <tr><td><button onclick="c11()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s16" disabled></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s17" disabled></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s18" disabled></td></tr>
+    </table>`;
+}
+
+function abc4(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side a =</td><td><input type="text" id="s19"></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s20"></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s21"></td></tr>
+        <tr><td><button onclick="c12()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s22" disabled></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s23" disabled></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s24" disabled></td></tr>
+    </table>`;
+}
+
+function abc5(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side a =</td><td><input type="text" id="s25"></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s26"></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s27"></td></tr>
+        <tr><td><button onclick="c13()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s28" disabled></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s29" disabled></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s30" disabled></td></tr>
+    </table>`;
+}
+
+function abc6(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side a =</td><td><input type="text" id="s31"></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s32"></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s33"></td></tr>
+        <tr><td><button onclick="c14()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s34" disabled></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s35" disabled></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s36" disabled></td></tr>
+    </table>`;
+}
+
+function abc7(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side a =</td><td><input type="text" id="s37"></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s38"></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s39"></td></tr>
+        <tr><td><button onclick="c15()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s40" disabled></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s41" disabled></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s42" disabled></td></tr>
+    </table>`;
+}
+
+function abc8(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side a =</td><td><input type="text" id="s43"></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s44"></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s45"></td></tr>
+        <tr><td><button onclick="c16()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s46" disabled></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s47" disabled></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s48" disabled></td></tr>
+    </table>`;
+}
+
+function abc9(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side b =</td><td><input type="text" id="s49"></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s50"></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s51"></td></tr>
+        <tr><td><button onclick="c17()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side a =</td><td><input type="text" id="s52" disabled></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s53" disabled></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s54" disabled></td></tr>
+    </table>`;
+}
+
+function abc10(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side b =</td><td><input type="text" id="s55"></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s56"></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s57"></td></tr>
+        <tr><td><button onclick="c18()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side a =</td><td><input type="text" id="s58" disabled></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s59" disabled></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s60" disabled></td></tr>
+    </table>`;
+}
+
+function abc11(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side b =</td><td><input type="text" id="s61"></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s62"></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s63"></td></tr>
+        <tr><td><button onclick="c19()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side a =</td><td><input type="text" id="s64" disabled></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s65" disabled></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s66" disabled></td></tr>
+    </table>`;
+}
+
+function abc12(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Angle a =</td><td><input type="text" id="s67"></td></tr>
+        <tr><td>Side a =</td><td><input type="text" id="s68"></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s69"></td></tr>
+        <tr><td><button onclick="c20()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s70" disabled></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s71" disabled></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s72" disabled></td></tr>
+    </table>`;
+}
+
+function abc13(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Angle a =</td><td><input type="text" id="s73"></td></tr>
+        <tr><td>Side a =</td><td><input type="text" id="s74"></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s75"></td></tr>
+        <tr><td><button onclick="c21()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s76" disabled></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s77" disabled></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s78" disabled></td></tr>
+    </table>`;
+}
+
+function abc14(){
+    document.getElementById('content-display').innerHTML=`
+    <button onclick="st()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Angle a =</td><td><input type="text" id="s79"></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s80"></td></tr>
+        <tr><td>Side c =</td><td><input type="text" id="s81"></td></tr>
+        <tr><td><button onclick="c22()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side a =</td><td><input type="text" id="s82" disabled></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s83" disabled></td></tr>
+        <tr><td>Angle c =</td><td><input type="text" id="s84" disabled></td></tr>
+    </table>`;
+}
+
+function tr() {
+    document.getElementById("content-display").innerHTML = `
+        <button onclick="h()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+        <br><br>
+        <mg src="it.jpg" height="700px" width="800px">
+        <table border="0" cellspacing="10" style="width:900px;">
+            <tr>
+                <td colspan="2" style="background: green; color: yellow; height: 200px; width: 900px; font-size:30px;" align="center">
+                    CHOOSE WHAT YOU KNOW ABOUT THE TRIANGLE:
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <button onclick="tr1()" style="height: 200px; width: 400px;">Side a & Side b</button>
+                    <button onclick="tr2()" style="height: 200px; width: 400px;">Side a & Angle a</button>
+                    <button onclick="tr3()" style="height: 200px; width: 400px;">Side a & Angle b</button>
+                </td>
+                <td>
+                    <button onclick="tr4()" style="height: 200px; width: 400px;">Side b & Angle a</button>
+                    <button onclick="tr5()" style="height: 200px; width: 400px;">Side b & Angle b</button>
+                    <button onclick="tr6()" style="height: 200px; width: 400px;">Angle a & Angle b</button>
+                </td>
+            </tr>
+        </table>`;
+}
+
+function tr1() {
+    document.getElementById('content-display').innerHTML = `
+    <button onclick="tr()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side a =</td><td><input type="text" id="s1"></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s2"></td></tr>
+        <tr><td><button onclick="c23()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s3" disabled></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s4" disabled></td></tr>
+    </table>`;
+}
+
+function tr2() {
+    document.getElementById('content-display').innerHTML = `
+    <button onclick="tr()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side a =</td><td><input type="text" id="s5"></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s6"></td></tr>
+        <tr><td><button onclick="c24()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s7" disabled></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s8" disabled></td></tr>
+    </table>`;
+}
+
+function tr3() {
+    document.getElementById('content-display').innerHTML = `
+    <button onclick="tr()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side a =</td><td><input type="text" id="s9"></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s10"></td></tr>
+        <tr><td><button onclick="c25()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s11" disabled></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s12" disabled></td></tr>
+    </table>`;
+}
+
+function tr4() {
+    document.getElementById('content-display').innerHTML = `
+    <button onclick="tr()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side b =</td><td><input type="text" id="s13"></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s14"></td></tr>
+        <tr><td><button onclick="c26()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side a =</td><td><input type="text" id="s15" disabled></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s16" disabled></td></tr>
+    </table>`;
+}
+
+function tr5() {
+    document.getElementById('content-display').innerHTML = `
+    <button onclick="tr()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Side b =</td><td><input type="text" id="s17"></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s18"></td></tr>
+        <tr><td><button onclick="c27()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side a =</td><td><input type="text" id="s19" disabled></td></tr>
+        <tr><td>Angle a =</td><td><input type="text" id="s20" disabled></td></tr>
+    </table>`;
+}
+
+function tr6() {
+    document.getElementById('content-display').innerHTML = `
+    <button onclick="tr()" style="background: blue; width: 200px; height: 150px; color: #08325b; font-size: 50px">🔙</button>
+    <br><br><br><br>
+    <table border="0" cellspacing="0">
+        <tr><td>Angle a =</td><td><input type="text" id="s21"></td></tr>
+        <tr><td>Angle b =</td><td><input type="text" id="s22"></td></tr>
+        <tr><td><button onclick="c28()" style="height:60px;width:200px;background:black;color:white;font-size:20px">CALCULATE</button></td></tr>
+        <tr><td>Side a =</td><td><input type="text" id="s23" disabled></td></tr>
+        <tr><td>Side b =</td><td><input type="text" id="s24" disabled></td></tr>
+    </table>`;
+}
+
+function c1() {
+    try {
+        const a = parseFloat(document.getElementById('i1').value);
+        const angleA = parseFloat(document.getElementById('i2').value);
+        if(isNaN(a) || isNaN(angleA) || angleA >= 90) throw "Invalid input";
+        
+        const angleB = 90 - angleA;
+        const angleARad = angleA * Math.PI / 180;
+        const b = a / Math.tan(angleARad);
+        const c = a / Math.sin(angleARad);
+        
+        document.getElementById('i3').value = b.toFixed(2);
+        document.getElementById('i4').value = c.toFixed(2);
+        document.getElementById('i5').value = angleB.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid values (angle < 90°)");
+    }
+}
+
+function c2() {
+    try {
+        const b = parseFloat(document.getElementById('i6').value);
+        const angleA = parseFloat(document.getElementById('i7').value);
+        if(isNaN(b) || isNaN(angleA) || angleA >= 90) throw "Invalid input";
+        
+        const angleB = 90 - angleA;
+        const angleARad = angleA * Math.PI / 180;
+        const a = b * Math.tan(angleARad);
+        const c = b / Math.cos(angleARad);
+        
+        document.getElementById('i8').value = a.toFixed(2);
+        document.getElementById('i9').value = c.toFixed(2);
+        document.getElementById('i10').value = angleB.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid values (angle < 90°)");
+    }
+}
+
+function c3() {
+    try {
+        const c = parseFloat(document.getElementById('i11').value);
+        const angleA = parseFloat(document.getElementById('i12').value);
+        if(isNaN(c) || isNaN(angleA) || angleA >= 90) throw "Invalid input";
+        
+        const angleB = 90 - angleA;
+        const angleARad = angleA * Math.PI / 180;
+        const a = c * Math.sin(angleARad);
+        const b = c * Math.cos(angleARad);
+        
+        document.getElementById('i13').value = a.toFixed(2);
+        document.getElementById('i14').value = b.toFixed(2);
+        document.getElementById('i15').value = angleB.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid values (angle < 90°)");
+    }
+}
+
+function c4() {
+    try {
+        const a = parseFloat(document.getElementById('i16').value);
+        const angleB = parseFloat(document.getElementById('i17').value);
+        if(isNaN(a) || isNaN(angleB) || angleB >= 90) throw "Invalid input";
+        
+        const angleA = 90 - angleB;
+        const angleBRad = angleB * Math.PI / 180;
+        const b = a * Math.tan(angleBRad);
+        const c = a / Math.cos(angleBRad);
+        
+        document.getElementById('i18').value = b.toFixed(2);
+        document.getElementById('i19').value = c.toFixed(2);
+        document.getElementById('i20').value = angleA.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid values (angle < 90°)");
+    }
+}
+
+function c5() {
+    try {
+        const b = parseFloat(document.getElementById('i21').value);
+        const angleB = parseFloat(document.getElementById('i22').value);
+        if(isNaN(b) || isNaN(angleB) || angleB >= 90) throw "Invalid input";
+        
+        const angleA = 90 - angleB;
+        const angleBRad = angleB * Math.PI / 180;
+        const a = b / Math.tan(angleBRad);
+        const c = b / Math.sin(angleBRad);
+        
+        document.getElementById('i23').value = a.toFixed(2);
+        document.getElementById('i24').value = c.toFixed(2);
+        document.getElementById('i25').value = angleA.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid values (angle < 90°)");
+    }
+}
+
+function c6() {
+    try {
+        const c = parseFloat(document.getElementById('i26').value);
+        const angleB = parseFloat(document.getElementById('i27').value);
+        if(isNaN(c) || isNaN(angleB) || angleB >= 90) throw "Invalid input";
+        
+        const angleA = 90 - angleB;
+        const angleBRad = angleB * Math.PI / 180;
+        const a = c * Math.cos(angleBRad);
+        const b = c * Math.sin(angleBRad);
+        
+        document.getElementById('i28').value = a.toFixed(2);
+        document.getElementById('i29').value = b.toFixed(2);
+        document.getElementById('i130').value = angleA.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid values (angle < 90°)");
+    }
+}
+
+function c7() {
+    try {
+        const a = parseFloat(document.getElementById('i31').value);
+        if(isNaN(a) || a <= 0) throw "Invalid input";
+        
+        const h = (Math.sqrt(3)/2) * a;
+        document.getElementById('i32').value = h.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter a valid positive number");
+    }
+}
+
+function c8() {
+    try {
+        const h = parseFloat(document.getElementById('i33').value);
+        if(isNaN(h) || h <= 0) throw "Invalid input";
+        
+        const a = (2 * h) / Math.sqrt(3);
+        document.getElementById('i34').value = a.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter a valid positive number");
+    }
+}
+
+function c9() {
+    try {
+        const a = parseFloat(document.getElementById('s1').value);
+        const b = parseFloat(document.getElementById('s2').value);
+        const c = parseFloat(document.getElementById('s3').value);
+        
+        if(isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0)
+            throw "Invalid sides";
+        if(a + b <= c || a + c <= b || b + c <= a)
+            throw "Not a valid triangle";
+        
+        const angleA = Math.acos((b*b + c*c - a*a) / (2*b*c)) * 180 / Math.PI;
+        const angleB = Math.acos((a*a + c*c - b*b) / (2*a*c)) * 180 / Math.PI;
+        const angleC = 180 - angleA - angleB;
+        
+        document.getElementById('s4').value = angleA.toFixed(2);
+        document.getElementById('s5').value = angleB.toFixed(2);
+        document.getElementById('s6').value = angleC.toFixed(2);
+    } catch(e) {
+        alert("Error: " + (e === "Not a valid triangle" ? e : "Please enter valid positive numbers"));
+    }
+}
+
+function c10() {
+    try {
+        const angleA = parseFloat(document.getElementById('s7').value);
+        const angleB = parseFloat(document.getElementById('s8').value);
+        const angleC = parseFloat(document.getElementById('s9').value);
+        
+        if(isNaN(angleA) || isNaN(angleB) || isNaN(angleC) || angleA <= 0 || angleB <= 0 || angleC <= 0)
+            throw "Invalid angles";
+        if(Math.abs(angleA + angleB + angleC - 180) > 0.001)
+            throw "Angles must sum to 180°";
+        
+        const a = 1;
+        const b = a * Math.sin(angleB * Math.PI / 180) / Math.sin(angleA * Math.PI / 180);
+        const c = a * Math.sin(angleC * Math.PI / 180) / Math.sin(angleA * Math.PI / 180);
+        
+        document.getElementById('s10').value = a.toFixed(2);
+        document.getElementById('s11').value = b.toFixed(2);
+        document.getElementById('s12').value = c.toFixed(2);
+    } catch(e) {
+        alert("Error: " + (e === "Angles must sum to 180°" ? e : "Please enter valid positive angles"));
+    }
+}
+
+function c11() {
+    try {
+        const a = parseFloat(document.getElementById('s13').value);
+        const b = parseFloat(document.getElementById('s14').value);
+        const angleA = parseFloat(document.getElementById('s15').value);
+        
+        if(isNaN(a) || isNaN(b) || isNaN(angleA) || a <= 0 || b <= 0 || angleA <= 0 || angleA >= 180)
+            throw "Invalid input";
+        
+        const angleB = Math.asin(b * Math.sin(angleA * Math.PI / 180) / a) * 180 / Math.PI;
+        if(isNaN(angleB)) throw "No solution exists";
+        
+        const angleC = 180 - angleA - angleB;
+        const c = a * Math.sin(angleC * Math.PI / 180) / Math.sin(angleA * Math.PI / 180);
+        
+        document.getElementById('s16').value = c.toFixed(2);
+        document.getElementById('s17').value = angleB.toFixed(2);
+        document.getElementById('s18').value = angleC.toFixed(2);
+    } catch(e) {
+        alert("Error: " + (e === "No solution exists" ? "These values don't form a valid triangle" : "Please enter valid positive values"));
+    }
+}
+
+function c12() {
+    try {
+        const a = parseFloat(document.getElementById('s19').value);
+        const b = parseFloat(document.getElementById('s20').value);
+        const angleB = parseFloat(document.getElementById('s21').value);
+        
+        if(isNaN(a) || isNaN(b) || isNaN(angleB) || a <= 0 || b <= 0 || angleB <= 0 || angleB >= 180)
+            throw "Invalid input";
+        
+        const angleA = Math.asin(a * Math.sin(angleB * Math.PI / 180) / b) * 180 / Math.PI;
+        if(isNaN(angleA)) throw "No solution exists";
+        
+        const angleC = 180 - angleA - angleB;
+        const c = b * Math.sin(angleC * Math.PI / 180) / Math.sin(angleB * Math.PI / 180);
+        
+        document.getElementById('s22').value = c.toFixed(2);
+        document.getElementById('s23').value = angleA.toFixed(2);
+        document.getElementById('s24').value = angleC.toFixed(2);
+    } catch(e) {
+        alert("Error: " + (e === "No solution exists" ? "These values don't form a valid triangle" : "Please enter valid positive values"));
+    }
+}
+
+function c13() {
+    try {
+        const a = parseFloat(document.getElementById('s25').value);
+        const b = parseFloat(document.getElementById('s26').value);
+        const angleC = parseFloat(document.getElementById('s27').value);
+        
+        if(isNaN(a) || isNaN(b) || isNaN(angleC) || a <= 0 || b <= 0 || angleC <= 0 || angleC >= 180)
+            throw "Invalid input";
+        
+        const c = Math.sqrt(a*a + b*b - 2*a*b*Math.cos(angleC * Math.PI / 180));
+        const angleA = Math.acos((b*b + c*c - a*a) / (2*b*c)) * 180 / Math.PI;
+        const angleB = 180 - angleA - angleC;
+        
+        document.getElementById('s28').value = angleA.toFixed(2);
+        document.getElementById('s29').value = angleB.toFixed(2);
+        document.getElementById('s30').value = c.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid positive values");
+    }
+}
+
+function c14() {
+    try {
+        const a = parseFloat(document.getElementById('s31').value);
+        const c = parseFloat(document.getElementById('s32').value);
+        const angleA = parseFloat(document.getElementById('s33').value);
+        
+        if(isNaN(a) || isNaN(c) || isNaN(angleA) || a <= 0 || c <= 0 || angleA <= 0 || angleA >= 180)
+            throw "Invalid input";
+        
+        const angleC = Math.asin(c * Math.sin(angleA * Math.PI / 180) / a) * 180 / Math.PI;
+        if(isNaN(angleC)) throw "No solution exists";
+        
+        const angleB = 180 - angleA - angleC;
+        const b = a * Math.sin(angleB * Math.PI / 180) / Math.sin(angleA * Math.PI / 180);
+        
+        document.getElementById('s34').value = b.toFixed(2);
+        document.getElementById('s35').value = angleB.toFixed(2);
+        document.getElementById('s36').value = angleC.toFixed(2);
+    } catch(e) {
+        alert("Error: " + (e === "No solution exists" ? "These values don't form a valid triangle" : "Please enter valid positive values"));
+    }
+}
+
+function c15() {
+    try {
+        const a = parseFloat(document.getElementById('s37').value);
+        const c = parseFloat(document.getElementById('s38').value);
+        const angleB = parseFloat(document.getElementById('s39').value);
+        
+        if(isNaN(a) || isNaN(c) || isNaN(angleB) || a <= 0 || c <= 0 || angleB <= 0 || angleB >= 180)
+            throw "Invalid input";
+        
+        const b = Math.sqrt(a*a + c*c - 2*a*c*Math.cos(angleB * Math.PI / 180));
+        const angleA = Math.acos((b*b + c*c - a*a) / (2*b*c)) * 180 / Math.PI;
+        const angleC = 180 - angleA - angleB;
+        
+        document.getElementById('s40').value = b.toFixed(2);
+        document.getElementById('s41').value = angleA.toFixed(2);
+        document.getElementById('s42').value = angleC.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid positive values");
+    }
+}
+
+function c16() {
+    try {
+        const a = parseFloat(document.getElementById('s43').value);
+        const c = parseFloat(document.getElementById('s44').value);
+        const angleC = parseFloat(document.getElementById('s45').value);
+        
+        if(isNaN(a) || isNaN(c) || isNaN(angleC) || a <= 0 || c <= 0 || angleC <= 0 || angleC >= 180)
+            throw "Invalid input";
+        
+        const angleA = Math.asin(a * Math.sin(angleC * Math.PI / 180) / c) * 180 / Math.PI;
+        if(isNaN(angleA)) throw "No solution exists";
+        
+        const angleB = 180 - angleA - angleC;
+        const b = c * Math.sin(angleB * Math.PI / 180) / Math.sin(angleC * Math.PI / 180);
+        
+        document.getElementById('s46').value = b.toFixed(2);
+        document.getElementById('s47').value = angleA.toFixed(2);
+        document.getElementById('s48').value = angleB.toFixed(2);
+    } catch(e) {
+        alert("Error: " + (e === "No solution exists" ? "These values don't form a valid triangle" : "Please enter valid positive values"));
+    }
+}
+
+function c17() {
+    try {
+        const b = parseFloat(document.getElementById('s49').value);
+        const c = parseFloat(document.getElementById('s50').value);
+        const angleA = parseFloat(document.getElementById('s51').value);
+        
+        if(isNaN(b) || isNaN(c) || isNaN(angleA) || b <= 0 || c <= 0 || angleA <= 0 || angleA >= 180)
+            throw "Invalid input";
+        
+        const a = Math.sqrt(b*b + c*c - 2*b*c*Math.cos(angleA * Math.PI / 180));
+        const angleB = Math.acos((a*a + c*c - b*b) / (2*a*c)) * 180 / Math.PI;
+        const angleC = 180 - angleA - angleB;
+        
+        document.getElementById('s52').value = a.toFixed(2);
+        document.getElementById('s53').value = angleB.toFixed(2);
+        document.getElementById('s54').value = angleC.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid positive values");
+    }
+}
+
+function c18() {
+    try {
+        const b = parseFloat(document.getElementById('s55').value);
+        const c = parseFloat(document.getElementById('s56').value);
+        const angleB = parseFloat(document.getElementById('s57').value);
+        
+        if(isNaN(b) || isNaN(c) || isNaN(angleB) || b <= 0 || c <= 0 || angleB <= 0 || angleB >= 180)
+            throw "Invalid input";
+        
+        const angleC = Math.asin(c * Math.sin(angleB * Math.PI / 180) / b) * 180 / Math.PI;
+        if(isNaN(angleC)) throw "No solution exists";
+        
+        const angleA = 180 - angleB - angleC;
+        const a = b * Math.sin(angleA * Math.PI / 180) / Math.sin(angleB * Math.PI / 180);
+        
+        document.getElementById('s58').value = a.toFixed(2);
+        document.getElementById('s59').value = angleA.toFixed(2);
+        document.getElementById('s60').value = angleC.toFixed(2);
+    } catch(e) {
+        alert("Error: " + (e === "No solution exists" ? "These values don't form a valid triangle" : "Please enter valid positive values"));
+    }
+}
+
+function c19() {
+    try {
+        const b = parseFloat(document.getElementById('s61').value);
+        const c = parseFloat(document.getElementById('s62').value);
+        const angleC = parseFloat(document.getElementById('s63').value);
+        
+        if(isNaN(b) || isNaN(c) || isNaN(angleC) || b <= 0 || c <= 0 || angleC <= 0 || angleC >= 180)
+            throw "Invalid input";
+        
+        const angleB = Math.asin(b * Math.sin(angleC * Math.PI / 180) / c) * 180 / Math.PI;
+        if(isNaN(angleB)) throw "No solution exists";
+        
+        const angleA = 180 - angleB - angleC;
+        const a = c * Math.sin(angleA * Math.PI / 180) / Math.sin(angleC * Math.PI / 180);
+        
+        document.getElementById('s64').value = a.toFixed(2);
+        document.getElementById('s65').value = angleA.toFixed(2);
+        document.getElementById('s66').value = angleB.toFixed(2);
+    } catch(e) {
+        alert("Error: " + (e === "No solution exists" ? "These values don't form a valid triangle" : "Please enter valid positive values"));
+    }
+}
+
+function c20() {
+    try {
+        const angleA = parseFloat(document.getElementById('s67').value);
+        const a = parseFloat(document.getElementById('s68').value);
+        const b = parseFloat(document.getElementById('s69').value);
+        
+        if(isNaN(angleA) || isNaN(a) || isNaN(b) || angleA <= 0 || a <= 0 || b <= 0 || angleA >= 180)
+            throw "Invalid input";
+        
+        const angleB = Math.asin(b * Math.sin(angleA * Math.PI / 180) / a) * 180 / Math.PI;
+        if(isNaN(angleB)) throw "No solution exists";
+        
+        const angleC = 180 - angleA - angleB;
+        const c = a * Math.sin(angleC * Math.PI / 180) / Math.sin(angleA * Math.PI / 180);
+        
+        document.getElementById('s70').value = c.toFixed(2);
+        document.getElementById('s71').value = angleB.toFixed(2);
+        document.getElementById('s72').value = angleC.toFixed(2);
+    } catch(e) {
+        alert("Error: " + (e === "No solution exists" ? "These values don't form a valid triangle" : "Please enter valid positive values"));
+    }
+}
+
+function c21() {
+    try {
+        const angleA = parseFloat(document.getElementById('s73').value);
+        const a = parseFloat(document.getElementById('s74').value);
+        const c = parseFloat(document.getElementById('s75').value);
+        
+        if(isNaN(angleA) || isNaN(a) || isNaN(c) || angleA <= 0 || a <= 0 || c <= 0 || angleA >= 180)
+            throw "Invalid input";
+        
+        const angleC = Math.asin(c * Math.sin(angleA * Math.PI / 180) / a) * 180 / Math.PI;
+        if(isNaN(angleC)) throw "No solution exists";
+        
+        const angleB = 180 - angleA - angleC;
+        const b = a * Math.sin(angleB * Math.PI / 180) / Math.sin(angleA * Math.PI / 180);
+        
+        document.getElementById('s76').value = b.toFixed(2);
+        document.getElementById('s77').value = angleB.toFixed(2);
+        document.getElementById('s78').value = angleC.toFixed(2);
+    } catch(e) {
+        alert("Error: " + (e === "No solution exists" ? "These values don't form a valid triangle" : "Please enter valid positive values"));
+    }
+}
+
+function c22() {
+    try {
+        const angleA = parseFloat(document.getElementById('s79').value);
+        const b = parseFloat(document.getElementById('s80').value);
+        const c = parseFloat(document.getElementById('s81').value);
+        
+        if(isNaN(angleA) || isNaN(b) || isNaN(c) || angleA <= 0 || b <= 0 || c <= 0 || angleA >= 180)
+            throw "Invalid input";
+        
+        const a = Math.sqrt(b*b + c*c - 2*b*c*Math.cos(angleA * Math.PI / 180));
+        const angleB = Math.acos((a*a + c*c - b*b) / (2*a*c)) * 180 / Math.PI;
+        const angleC = 180 - angleA - angleB;
+        
+        document.getElementById('s82').value = a.toFixed(2);
+        document.getElementById('s83').value = angleB.toFixed(2);
+        document.getElementById('s84').value = angleC.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid positive values");
+    }
+}
+
+function c23() {
+    try {
+        const a = parseFloat(document.getElementById('s1').value);
+        const b = parseFloat(document.getElementById('s2').value);
+        
+        if(isNaN(a) || isNaN(b) || a <= 0 || b <= 0) throw "Invalid sides";
+        if(a >= 2*b) throw "Base too long for given sides";
+        
+        const height = Math.sqrt(b*b - (a*a)/4);
+        const angleA = 2 * Math.atan((a/2) / height) * 180 / Math.PI;
+        const angleB = (180 - angleA) / 2;
+        
+        document.getElementById('s3').value = angleA.toFixed(2);
+        document.getElementById('s4').value = angleB.toFixed(2);
+    } catch(e) {
+        alert("Error: " + (e === "Base too long for given sides" ? e : "Please enter valid positive numbers"));
+    }
+}
+
+function c24() {
+    try {
+        const a = parseFloat(document.getElementById('s5').value);
+        const angleA = parseFloat(document.getElementById('s6').value);
+        
+        if(isNaN(a) || isNaN(angleA) || a <= 0 || angleA <= 0 || angleA >= 180)
+            throw "Invalid input";
+        
+        const angleB = (180 - angleA) / 2;
+        const b = a * Math.sin(angleB * Math.PI / 180) / Math.sin(angleA * Math.PI / 180);
+        
+        document.getElementById('s7').value = b.toFixed(2);
+        document.getElementById('s8').value = angleB.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid positive values");
+    }
+}
+
+function c25() {
+    try {
+        const a = parseFloat(document.getElementById('s9').value);
+        const angleB = parseFloat(document.getElementById('s10').value);
+        
+        if(isNaN(a) || isNaN(angleB) || a <= 0 || angleB <= 0 || angleB >= 90)
+            throw "Invalid input";
+        
+        const angleA = 180 - 2 * angleB;
+        const b = a * Math.sin(angleB * Math.PI / 180) / Math.sin(angleA * Math.PI / 180);
+        
+        document.getElementById('s11').value = b.toFixed(2);
+        document.getElementById('s12').value = angleA.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid positive values");
+    }
+}
+
+function c26() {
+    try {
+        const b = parseFloat(document.getElementById('s13').value);
+        const angleA = parseFloat(document.getElementById('s14').value);
+        
+        if(isNaN(b) || isNaN(angleA) || b <= 0 || angleA <= 0 || angleA >= 180)
+            throw "Invalid input";
+        
+        const angleB = (180 - angleA) / 2;
+        const a = b * Math.sin(angleA * Math.PI / 180) / Math.sin(angleB * Math.PI / 180);
+        
+        document.getElementById('s15').value = a.toFixed(2);
+        document.getElementById('s16').value = angleB.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid positive values");
+    }
+}
+
+function c27() {
+    try {
+        const b = parseFloat(document.getElementById('s17').value);
+        const angleB = parseFloat(document.getElementById('s18').value);
+        
+        if(isNaN(b) || isNaN(angleB) || b <= 0 || angleB <= 0 || angleB >= 90)
+            throw "Invalid input";
+        
+        const angleA = 180 - 2 * angleB;
+        const a = b * Math.sin(angleA * Math.PI / 180) / Math.sin(angleB * Math.PI / 180);
+        
+        document.getElementById('s19').value = a.toFixed(2);
+        document.getElementById('s20').value = angleA.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid positive values");
+    }
+}
+
+function c28() {
+    try {
+        const angleA = parseFloat(document.getElementById('s21').value);
+        const angleB = parseFloat(document.getElementById('s22').value);
+        
+        if(isNaN(angleA) || isNaN(angleB) || angleA <= 0 || angleB <= 0 || angleA + angleB >= 180)
+            throw "Invalid angles";
+        
+        const a = 1;
+        const b = a * Math.sin(angleB * Math.PI / 180) / Math.sin(angleA * Math.PI / 180);
+        
+        document.getElementById('s23').value = a.toFixed(2);
+        document.getElementById('s24').value = b.toFixed(2);
+    } catch(e) {
+        alert("Error: Please enter valid positive angles that sum to less than 180°");
+    }
+}
+
+</script>
+</body>
+</html>
